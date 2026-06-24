@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background-color: #0A0A0A; color: white; font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #F97316; border-radius: 2px; }
+::selection { background: #F97316; color: white; }
+
+@layer components {
+  .btn-primary { @apply font-bold py-4 px-8 rounded-xl transition-all duration-200 active:scale-95 flex items-center justify-center gap-2; background-color: #F97316; color: white; }
+  .btn-primary:hover { background-color: #EA6C0A; }
+  .card-dark { @apply rounded-2xl border border-white/5; background: #1A1A1A; }
+  .text-orange { color: #F97316; }
+  .bg-orange-primary { background-color: #F97316; }
+}
+
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes slideUp { 0% { transform: translateY(100%); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes pulseOrange { 0%, 100% { box-shadow: 0 0 0 0 rgba(249,115,22,0.4); } 50% { box-shadow: 0 0 0 8px rgba(249,115,22,0); } }
+
+.animate-slide-up { animation: slideUp 0.35s ease-out; }
+.animate-fade-in { animation: fadeIn 0.3s ease-out; }
+.animate-pulse-orange { animation: pulseOrange 2s infinite; }
+.skeleton { background: linear-gradient(90deg, #1a1a1a 25%, #222 50%, #1a1a1a 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 8px; }
+.pb-safe { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
