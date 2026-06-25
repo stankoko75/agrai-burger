@@ -40,91 +40,63 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#111] to-[#0A0A0A]" />
-          <div
-            className="absolute top-0 right-0 w-2/3 h-full opacity-20"
-            style={{
-              backgroundImage: 'radial-gradient(ellipse at 70% 40%, rgba(249,115,22,0.4) 0%, transparent 60%)',
-            }}
-          />
-          {/* Grid texture */}
-          <div
-            className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-              backgroundSize: '60px 60px',
-            }}
-          />
-        </div>
+        {/* Background image */}
+        <img
+          src="/images/hero.jpg"
+          alt="Agraï Burger Premium"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[80vh] py-20">
-            {/* Left content */}
-            <div className="order-2 lg:order-1">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6" style={{ borderColor: 'rgba(249,115,22,0.3)', backgroundColor: 'rgba(249,115,22,0.1)' }}>
-                <Moon size={14} style={{ color: '#F97316' }} />
-                <span className="text-sm font-semibold" style={{ color: '#F97316' }}>Livraison de nuit 22H – 6H</span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="font-display text-white leading-none mb-4" style={{ fontFamily: "'Bebas Neue', Impact, sans-serif" }}>
-                <span className="block" style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)', lineHeight: 1 }}>LIVRAISON</span>
-                <span className="block" style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)', lineHeight: 1, color: '#F97316' }}>DE NUIT</span>
-              </h1>
-
-              <p className="text-white/60 text-lg mb-8 max-w-md leading-relaxed">
-                Vos burgers préférés, livrés chauds chez vous.
-              </p>
-
-              {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-10">
-                <Link
-                  href="/menu"
-                  className="inline-flex items-center justify-center gap-3 font-bold text-white px-8 py-4 rounded-2xl text-lg transition-all duration-200 active:scale-95 shadow-lg"
-                  style={{ backgroundColor: '#F97316', boxShadow: '0 0 30px rgba(249,115,22,0.3)' }}
-                >
-                  COMMANDER MAINTENANT
-                  <ArrowRight size={20} />
-                </Link>
-                <Link
-                  href="#menu-section"
-                  className="inline-flex items-center justify-center gap-2 font-semibold text-white px-8 py-4 rounded-2xl text-lg border border-white/20 hover:border-white/40 transition-all duration-200"
-                >
-                  Voir le menu
-                </Link>
-              </div>
-
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-6">
-                {[
-                  { icon: Bike, label: 'Livraison\nRapide' },
-                  { icon: ShoppingBag, label: 'Produits\nFrais' },
-                  { icon: Shield, label: 'Paiement\nSécurisé' },
-                ].map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-2">
-                    <Icon size={20} style={{ color: '#F97316' }} />
-                    <span className="text-white/60 text-xs font-semibold leading-tight whitespace-pre-line">{label}</span>
-                  </div>
-                ))}
-              </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full py-20">
+          <div className="max-w-2xl">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6" style={{ borderColor: 'rgba(249,115,22,0.3)', backgroundColor: 'rgba(249,115,22,0.1)' }}>
+              <Moon size={14} style={{ color: '#F97316' }} />
+              <span className="text-sm font-semibold" style={{ color: '#F97316' }}>Livraison de nuit 22H – 6H</span>
             </div>
 
-            {/* Right - Hero Burger Image */}
-            <div className="order-1 lg:order-2 relative">
-              <div
-                className="absolute inset-0 rounded-3xl opacity-40 blur-3xl"
-                style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.4) 0%, transparent 70%)' }}
-              />
-              <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <img
-                  src="/images/hero.jpg"
-                  alt="Agraï Burger Premium"
-                  className="w-full h-full object-cover aspect-[3/2] sm:aspect-square lg:aspect-[3/2]"
-                />
-              </div>
+            {/* Headline */}
+            <h1 className="font-display text-white leading-none mb-4" style={{ fontFamily: "'Bebas Neue', Impact, sans-serif" }}>
+              <span className="block" style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)', lineHeight: 1 }}>LIVRAISON</span>
+              <span className="block" style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)', lineHeight: 1, color: '#F97316' }}>DE NUIT</span>
+            </h1>
+
+            <p className="text-white/60 text-lg mb-8 max-w-md leading-relaxed">
+              Vos burgers préférés, livrés chauds chez vous.
+            </p>
+
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+              <Link
+                href="/menu"
+                className="inline-flex items-center justify-center gap-3 font-bold text-white px-8 py-4 rounded-2xl text-lg transition-all duration-200 active:scale-95 shadow-lg"
+                style={{ backgroundColor: '#F97316', boxShadow: '0 0 30px rgba(249,115,22,0.3)' }}
+              >
+                COMMANDER MAINTENANT
+                <ArrowRight size={20} />
+              </Link>
+              <Link
+                href="#menu-section"
+                className="inline-flex items-center justify-center gap-2 font-semibold text-white px-8 py-4 rounded-2xl text-lg border border-white/20 hover:border-white/40 transition-all duration-200"
+              >
+                Voir le menu
+              </Link>
+            </div>
+
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-6">
+              {[
+                { icon: Bike, label: 'Livraison\nRapide' },
+                { icon: ShoppingBag, label: 'Produits\nFrais' },
+                { icon: Shield, label: 'Paiement\nSécurisé' },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2">
+                  <Icon size={20} style={{ color: '#F97316' }} />
+                  <span className="text-white/60 text-xs font-semibold leading-tight whitespace-pre-line">{label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
