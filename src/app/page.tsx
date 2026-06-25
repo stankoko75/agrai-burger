@@ -113,17 +113,18 @@ export default function HomePage() {
             </div>
 
             {/* Right - Hero Burger Image */}
-            <div className="order-1 lg:order-2 relative flex justify-center items-center">
+            <div className="order-1 lg:order-2 relative">
               <div
-                className="absolute inset-0 rounded-full opacity-30 blur-3xl"
-                style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.5) 0%, transparent 70%)' }}
+                className="absolute inset-0 rounded-3xl opacity-40 blur-3xl"
+                style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.4) 0%, transparent 70%)' }}
               />
-              <img
-                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=90"
-                alt="Agraï Burger Premium"
-                className="relative z-10 w-full max-w-lg object-contain drop-shadow-2xl"
-                style={{ filter: 'drop-shadow(0 20px 60px rgba(0,0,0,0.8)) drop-shadow(0 0 30px rgba(249,115,22,0.2))' }}
-              />
+              <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <img
+                  src="/images/hero.jpg"
+                  alt="Agraï Burger Premium"
+                  className="w-full h-full object-cover aspect-[3/2] sm:aspect-square lg:aspect-[3/2]"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -199,15 +200,14 @@ export default function HomePage() {
 
       {/* FORMULES BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-20">
-        <div
-          className="relative rounded-3xl overflow-hidden p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-8"
-          style={{ background: 'linear-gradient(135deg, #1A1A1A 0%, #222 100%)' }}
-        >
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=40)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(8px)' }}
+        <div className="relative rounded-3xl overflow-hidden border border-white/10 min-h-[280px] sm:min-h-[340px] flex items-center">
+          <img
+            src="/images/formules-banner.jpg"
+            alt="Formules Agraï Burger"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="relative z-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
+          <div className="relative z-10 p-8 sm:p-12">
             <h2 className="text-white font-bold text-3xl sm:text-5xl leading-none mb-2">
               FORMULES{' '}
               <span style={{ color: '#F97316' }}>AU CHOIX</span>
@@ -220,15 +220,6 @@ export default function HomePage() {
             >
               DÉCOUVRIR LES MENUS <ArrowRight size={18} />
             </Link>
-          </div>
-          <div className="relative z-10 text-center">
-            <div
-              className="w-32 h-32 rounded-full flex flex-col items-center justify-center font-bold"
-              style={{ backgroundColor: '#F97316' }}
-            >
-              <span className="text-white/80 text-sm">À PARTIR DE</span>
-              <span className="text-white text-4xl leading-none">12€</span>
-            </div>
           </div>
         </div>
       </section>

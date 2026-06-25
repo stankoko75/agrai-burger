@@ -132,32 +132,30 @@ export default function ProductPage() {
           {/* SUPPLÉMENTS */}
           <div className="py-5 border-b border-white/10">
             <h2 className="text-white font-bold text-xs tracking-widest mb-4 uppercase">Suppléments</h2>
-            <div className="space-y-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {SUPPLEMENTS.map((sup) => {
                 const isSelected = selectedSupplements.includes(sup.id);
                 return (
                   <button
                     key={sup.id}
                     onClick={() => toggleSupplement(sup.id)}
-                    className="w-full flex items-center gap-4 p-4 rounded-2xl border transition-all duration-200"
+                    className="relative flex flex-col items-center gap-1.5 p-4 rounded-2xl border transition-all duration-200"
                     style={{
                       backgroundColor: isSelected ? 'rgba(249,115,22,0.1)' : '#1A1A1A',
                       borderColor: isSelected ? 'rgba(249,115,22,0.5)' : 'rgba(255,255,255,0.05)',
                     }}
                   >
-                    {/* Checkbox */}
-                    <div
-                      className="w-6 h-6 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all"
-                      style={{
-                        backgroundColor: isSelected ? '#F97316' : 'transparent',
-                        borderColor: isSelected ? '#F97316' : 'rgba(255,255,255,0.2)',
-                      }}
-                    >
-                      {isSelected && <Check size={14} className="text-white" />}
-                    </div>
-                    <span className="text-white text-sm font-medium flex-1 text-left">{sup.name}</span>
-                    <span className="text-white/50 text-sm">+ {sup.price.toFixed(2)} €</span>
-                    <span className="text-lg">{sup.image}</span>
+                    {isSelected && (
+                      <div
+                        className="absolute top-2 right-2 w-5 h-5 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: '#F97316' }}
+                      >
+                        <Check size={12} className="text-white" />
+                      </div>
+                    )}
+                    <span className="text-2xl">{sup.image}</span>
+                    <span className="text-white text-sm font-medium text-center leading-tight">{sup.name}</span>
+                    <span className="text-white/50 text-xs">+ {sup.price.toFixed(2)} €</span>
                   </button>
                 );
               })}
